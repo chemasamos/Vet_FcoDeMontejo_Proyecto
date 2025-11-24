@@ -9,7 +9,7 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
-use Spatie\Permission\Traits\HasRoles; // <--- AGREGADO: Importar el Trait
+use Spatie\Permission\Traits\HasRoles; // Para los roles
 
 class User extends Authenticatable
 {
@@ -18,9 +18,9 @@ class User extends Authenticatable
     /** @use HasFactory<\Database\Factories\UserFactory> */
     use HasFactory;
     use HasProfilePhoto;
-    use HasRoles; // <--- AGREGADO: Usar el Trait dentro de la clase
     use Notifiable;
     use TwoFactorAuthenticatable;
+    use HasRoles; // Para los roles
 
     /**
      * The attributes that are mass assignable.
@@ -65,5 +65,12 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    // --- AQUÍ ESTÁ LA NUEVA RELACIÓN ---
+    // Un usuario (dueño) puede tener muchas mascotas
+    public function mascotas()
+    {
+        return $this->hasMany(Mascota::class);
     }
 }
