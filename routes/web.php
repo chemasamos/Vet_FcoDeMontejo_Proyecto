@@ -2,10 +2,13 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MascotaController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\ClienteController;
+use App\Http\Controllers\DashboardController;
 
-// Ruta pública (Bienvenida)
+// Ruta pública (Bienvenida) - redirige a dashboard si está autenticado
 Route::get('/', function () {
-    return view('welcome');
+    return auth()->check() ? redirect('/dashboard') : view('welcome');
 });
 
 // Rutas protegidas (Solo usuarios logueados)
@@ -15,20 +18,25 @@ Route::middleware([
     'verified',
 ])->group(function () {
 
-    // Dashboard general
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+    // Dashboard general (vista resumen)
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
-    // GRUPO DE RUTAS SOLO PARA ADMIN Y STAFF (Veterinarios)
-    // Usamos el middleware de Spatie 'role'
+    // --- MÓDULO DE MASCOTAS ---
+    // Accesible para Admin y Staff (Veterinarios)
     Route::middleware(['role:admin|staff'])->group(function () {
-        
-        // Rutas automáticas para el CRUD de Mascotas
-        // (Index, Create, Store, Show, Edit, Update, Destroy)
         Route::resource('mascotas', MascotaController::class);
-        
-        // Aquí podrías agregar más rutas de gestión en el futuro
+    });
+
+    // --- GESTIÓN DE CLIENTES ---
+    // Accesible ÚNICAMENTE para el Admin
+    Route::middleware(['role:admin'])->group(function () {
+        Route::resource('clientes', ClienteController::class);
+    });
+
+    // --- GESTIÓN DE ADMINISTRADORES ---
+    // Accesible ÚNICAMENTE para el Admin (Dueño)
+    Route::middleware(['role:admin'])->group(function () {
+        Route::resource('administradores', UserController::class);
     });
 
 });
