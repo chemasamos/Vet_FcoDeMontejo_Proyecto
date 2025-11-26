@@ -1,244 +1,246 @@
-<p align="center">
-<a href="http://localhost:8000" target="_blank">
-<!-- PUEDES REEMPLAZAR ESTO CON TU PROPIO LOGO O UN BANNER SI TIENES UNO -->
-<img src="https://www.google.com/search?q=https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%2520SVG/2%2520CMYK/1%2520Full%2520Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Veterinaria Logo">
-</a>
-</p>
+# 🐾 Veterinaria Francisco de Montejo
 
-<h1 align="center">🐾 Veterinaria Francisco de Montejo</h1>
+Sistema de gestión integral para clínica veterinaria, desarrollado con Laravel 11 y Tailwind CSS. Permite administrar clientes, mascotas y personal de manera eficiente con un sistema de roles y permisos robusto.
 
-<p align="center">
-<strong>Sistema Integral de Gestión Clínica Veterinaria</strong>
-<br />
-<br />
-<a href="https://laravel.com"><img src="https://www.google.com/search?q=https://img.shields.io/badge/Laravel-11.x-FF2D20%3Fstyle%3Dfor-the-badge%26logo%3Dlaravel" alt="Laravel 11" /></a>
-<a href="https://tailwindcss.com"><img src="https://www.google.com/search?q=https://img.shields.io/badge/Tailwind_CSS-3.x-38B2AC%3Fstyle%3Dfor-the-badge%26logo%3Dtailwind-css" alt="Tailwind CSS" /></a>
-<a href="https://php.net"><img src="https://www.google.com/search?q=https://img.shields.io/badge/PHP-8.2%2B-777BB4%3Fstyle%3Dfor-the-badge%26logo%3Dphp" alt="PHP" /></a>
-<a href="https://mysql.com"><img src="https://www.google.com/search?q=https://img.shields.io/badge/MySQL-8.0%2B-4479A1%3Fstyle%3Dfor-the-badge%26logo%3Dmysql" alt="MySQL" /></a>
-</p>
+## 📋 Características Principales
 
-<p align="center">
-<a href="#-características-principales">Características</a> •
-<a href="#-instalación">Instalación</a> •
-<a href="#-credenciales-de-prueba">Credenciales</a> •
-<a href="#-uso-del-sistema">Uso</a> •
-<a href="#-solución-de-problemas">Soporte</a>
-</p>
+- ✅ **Sistema de Autenticación**: Login/Logout con Laravel Jetstream
+- 👥 **Gestión de Roles**: Administrador, Staff y Cliente
+- 🐕 **Módulo de Mascotas**: CRUD completo con relación a dueños
+- 👤 **Gestión de Clientes**: Administración de usuarios tipo cliente
+- 🛡️ **Control de Acceso**: Rutas protegidas según roles
+- 🎨 **Interfaz Moderna**: UI responsive con Tailwind CSS
+- 📊 **Dashboard**: Vista general del sistema
 
-📖 Descripción
+## 🛠️ Tecnologías Utilizadas
 
-Sistema de gestión robusto desarrollado con Laravel 11 y Tailwind CSS. Diseñado para optimizar la administración de una clínica veterinaria, permitiendo el control total de clientes, expedientes de mascotas y personal administrativo mediante un sistema seguro de roles y permisos (ACL).
+- **Backend**: Laravel 11.x
+- **Frontend**: Blade Templates + Tailwind CSS
+- **Autenticación**: Laravel Jetstream con Livewire
+- **Roles y Permisos**: Spatie Laravel-Permission
+- **Base de Datos**: MySQL/SQLite
+- **Assets**: Vite
 
-📋 Características Principales
+## ⚙️ Requisitos del Sistema
 
-Módulo
+- PHP >= 8.2
+- Composer >= 2.5
+- Node.js >= 18.x
+- NPM >= 9.x
+- MySQL >= 8.0 o SQLite
 
-Descripción
+## 🚀 Instalación
 
-🔐 Autenticación
+### 1️⃣ Clonar el Repositorio
 
-Login/Logout seguro implementado con Laravel Jetstream.
-
-👥 Gestión de Roles
-
-Jerarquía completa: Administrador, Staff y Cliente.
-
-🐕 Pacientes (Mascotas)
-
-CRUD completo con historial clínico y relación directa a dueños.
-
-👤 Clientes
-
-Administración de perfiles de usuarios y vinculación de mascotas.
-
-🛡️ Seguridad
-
-Rutas protegidas y middleware personalizado con Spatie.
-
-🎨 UX/UI
-
-Interfaz moderna, responsive y con Modo Oscuro nativo.
-
-📊 Dashboard
-
-Vista general con estadísticas y accesos rápidos según el rol.
-
-🛠️ Stack Tecnológico
-
-Backend framework: Laravel 11.x
-
-Frontend: Blade Templates + Tailwind CSS
-
-Interactividad: Livewire
-
-Base de Datos: MySQL / SQLite
-
-Gestión de Accesos: Spatie Laravel-Permission
-
-Empaquetador: Vite
-
-⚙️ Requisitos Previos
-
-Asegúrate de tener instalado lo siguiente antes de comenzar:
-
-PHP >= 8.2
-
-Composer >= 2.5
-
-Node.js >= 18.x & NPM >= 9.x
-
-MySQL >= 8.0 o SQLite
-
-🚀 Instalación y Configuración
-
-Sigue estos pasos para desplegar el proyecto en tu entorno local:
-
-1. Clonar el repositorio
-
+```bash
 git clone <url-del-repositorio>
 cd Vet_FcoDeMontejo_Proyecto
+```
 
+### 2️⃣ Instalar Dependencias de PHP
 
-2. Instalar dependencias
-
-# Backend
+```bash
 composer install
+```
 
-# Frontend
+### 3️⃣ Instalar Dependencias de Node
+
+```bash
 npm install
+```
 
+### 4️⃣ Configurar Variables de Entorno
 
-3. Configuración de entorno
-
+```bash
 cp .env.example .env
+```
 
+Edita el archivo `.env` y configura tu base de datos:
 
-Nota: Abre el archivo .env y configura tus credenciales de base de datos (DB_DATABASE, DB_USERNAME, etc.).
+```env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=veterinaria_db
+DB_USERNAME=root
+DB_PASSWORD=
+```
 
-4. Generar Key y Migrar
+### 5️⃣ Generar Clave de Aplicación
 
+```bash
 php artisan key:generate
+```
+
+### 6️⃣ Ejecutar Migraciones y Seeders
+
+```bash
 php artisan migrate --seed
+```
 
+Este comando creará todas las tablas necesarias y poblará la base de datos con datos de prueba.
 
-El comando --seed poblará la base de datos con los usuarios de prueba.
+### 7️⃣ Compilar Assets
 
-5. Ejecutar la aplicación
+```bash
+npm run build
+```
 
-Necesitarás dos terminales:
+Para desarrollo (con hot reload):
 
-Terminal 1 (Vite - Hot Reload):
-
+```bash
 npm run dev
+```
 
+### 8️⃣ Iniciar el Servidor
 
-Terminal 2 (Servidor Laravel):
-
+```bash
 php artisan serve
+```
 
+La aplicación estará disponible en: `http://localhost:8000`
 
-Visita http://localhost:8000 en tu navegador.
+## 🔑 Credenciales de Prueba
 
-🔑 Credenciales de Prueba
+El seeder crea automáticamente los siguientes usuarios de prueba:
 
-El sistema viene precargado con los siguientes usuarios para testear los diferentes niveles de acceso:
+### Administrador
+- **Email**: `admin@test.com`
+- **Contraseña**: `password`
+- **Permisos**: Acceso total al sistema
 
-Rol
+### Staff
+- **Email**: `staff@test.com`
+- **Contraseña**: `password`
+- **Permisos**: Gestión de clientes y mascotas
 
-Email
+### Cliente
+- **Email**: `cliente@test.com`
+- **Contraseña**: `password`
+- **Permisos**: Vista de sus propias mascotas
 
-Contraseña
+## 📱 Uso del Sistema
 
-Permisos
+### Panel de Administración
 
-👑 Administrador
+1. **Gestión de Administradores**: `/administradores`
+   - Crear, editar y eliminar usuarios admin/staff
+   - Asignar roles a usuarios
 
-admin@test.com
+2. **Gestión de Clientes**: `/clientes`
+   - Administrar clientes del sistema
+   - Vincular clientes con mascotas
 
-password
+3. **Gestión de Mascotas**: `/mascotas`
+   - Registrar nuevas mascotas
+   - Editar información (nombre, especie, raza, edad)
+   - Asociar mascota con dueño
+   - Eliminar registros
 
-Acceso total al sistema y gestión de usuarios.
+### Dashboard
 
-👨‍⚕️ Staff
+Accede a `http://localhost:8000/dashboard` después de iniciar sesión para ver:
+- Resumen de estadísticas
+- Accesos rápidos a módulos principales
+- Panel personalizado según rol
 
-staff@test.com
+## 🗂️ Estructura del Proyecto
 
-password
-
-Gestión operativa de clientes y mascotas.
-
-👤 Cliente
-
-cliente@test.com
-
-password
-
-Vista de lectura de sus propias mascotas.
-
-📱 Guía de Uso Rápido
-
-Panel de Administración
-
-/administradores: CRUD de usuarios internos. Aquí asignas roles.
-
-/clientes: Base de datos de dueños.
-
-/mascotas: Expedientes clínicos. Incluye foto, raza, edad y vinculación con dueño.
-
-Estructura del Proyecto
-
+```
 Vet_FcoDeMontejo_Proyecto/
 ├── app/
-│   ├── Http/Controllers/   # Lógica de negocio (Cliente, Mascota, User)
-│   └── Models/             # Modelos Eloquent y Relaciones
+│   ├── Http/Controllers/
+│   │   ├── ClienteController.php
+│   │   ├── MascotaController.php
+│   │   └── UserController.php
+│   └── Models/
+│       ├── User.php
+│       └── Mascota.php
 ├── database/
-│   └── seeders/            # Datos de prueba (DatabaseSeeder)
+│   ├── migrations/
+│   └── seeders/
+│       └── DatabaseSeeder.php
 ├── resources/
-│   └── views/              # Vistas Blade (Dashboard, Landing, CRUDs)
+│   └── views/
+│       ├── clientes/
+│       ├── mascotas/
+│       ├── users/
+│       ├── dashboard.blade.php
+│       └── welcome.blade.php
 └── routes/
-    └── web.php             # Rutas protegidas por Middleware
+    └── web.php
+```
 
+## 🔐 Sistema de Roles
 
-🐛 Solución de Problemas Comunes
+### Admin
+- Gestión completa de administradores y staff
+- Acceso a todos los módulos
+- Control total del sistema
 
-<details>
-<summary><strong>🚫 Error: Permission denied en storage/</strong></summary>
+### Staff
+- Gestión de clientes
+- Gestión de mascotas
+- Sin acceso a panel de administradores
 
-Si tienes problemas de permisos en Linux/Mac para guardar imágenes o logs:
+### Cliente
+- Vista de sus propias mascotas
+- Acceso limitado al sistema
 
-chmod -R 775 storage bootstrap/cache
+## 🎨 Características de UI
 
+- ✨ Diseño responsive
+- 🌙 Soporte para modo oscuro
+- 🔵 Botones interactivos con efectos hover
+- 📊 Tablas con paginación
+- 🎯 Iconos SVG integrados
+- ⚡ Transiciones suaves
 
-</details>
+## 📝 Comandos Útiles
 
-<details>
-<summary><strong>🎨 Los estilos no cargan o se ven mal</strong></summary>
+```bash
+# Limpiar caché
+php artisan cache:clear
+php artisan config:clear
+php artisan view:clear
 
-Asegúrate de que Vite esté corriendo (npm run dev) o compila los assets para producción:
-
+# Recompilar assets
 npm run build
 
+# Ejecutar en modo desarrollo
+npm run dev
 
-</details>
-
-<details>
-<summary><strong>💾 Error de Base de Datos o Tablas faltantes</strong></summary>
-
-Reinicia la base de datos completamente:
-
+# Refrescar base de datos
 php artisan migrate:fresh --seed
+```
 
+## 🐛 Solución de Problemas
 
-</details>
+### Error de permisos en storage/
+```bash
+chmod -R 775 storage bootstrap/cache
+```
 
-👨‍💻 Autor
+### Assets no se actualizan
+```bash
+npm run build
+```
 
-Proyecto desarrollado para la materia de Gaxiola Alluah jeke arabe dueño el 70% de paseo verde.
+### Error con Vite
+```bash
+npm install
+npm run build
+```
 
-📄 Licencia
+## 👨‍💻 Autor
 
-Este proyecto es de código abierto y está disponible bajo la Licencia MIT.
+Proyecto desarrollado para la materia de Programación Web.
 
-<p align="center">
-<i>Hecho con ❤️ y Laravel</i>
-</p>
+## 📄 Licencia
+
+Este proyecto es de código abierto y está disponible bajo la [Licencia MIT](LICENSE).
+
+---
+
+**Nota**: Este es un proyecto académico desarrollado con fines educativos.
