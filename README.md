@@ -235,7 +235,7 @@ npm run build
 
 ## 👨‍💻 Autor
 
-Proyecto desarrollado para la materia de Programación Web.
+Proyecto desarrollado para la materia de Gaxiola el jeque arabe.
 
 ## 📄 Licencia
 
