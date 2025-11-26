@@ -36,7 +36,9 @@ Route::middleware([
     // --- GESTIÓN DE ADMINISTRADORES ---
     // Accesible ÚNICAMENTE para el Admin (Dueño)
     Route::middleware(['role:admin'])->group(function () {
-        Route::resource('administradores', UserController::class);
+        Route::resource('administradores', UserController::class)->parameters([
+            'administradores' => 'user'
+        ]);
     });
 
 });
