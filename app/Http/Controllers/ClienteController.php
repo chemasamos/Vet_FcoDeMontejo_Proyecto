@@ -47,7 +47,7 @@ class ClienteController extends Controller
         // Always assign 'client' role
         $user->assignRole('client');
 
-        return redirect()->route('clientes.index')->with('success', 'Cliente creado exitosamente.');
+        return redirect()->route('clientes.index');
     }
 
     /**

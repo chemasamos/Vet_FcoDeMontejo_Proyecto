@@ -28,16 +28,28 @@
                             <td class="px-6 py-4 text-gray-900 dark:text-white">{{ $user->name }}</td>
                             <td class="px-6 py-4 text-gray-500 dark:text-gray-400">{{ $user->email }}</td>
                             <td class="px-6 py-4">
-                                <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-blue-100 text-blue-800">
+                                <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-blue-600 text-white">
                                     {{ $user->getRoleNames()->first() ?? 'Sin Rol' }}
                                 </span>
                             </td>
                             <td class="px-6 py-4 font-medium">
-                                <a href="{{ route('administradores.edit', $user) }}" class="text-indigo-600 hover:text-indigo-900 mr-2">Editar</a>
-                                <form action="{{ route('administradores.destroy', $user) }}" method="POST" class="inline">
-                                    @csrf @method('DELETE')
-                                    <button type="submit" class="text-red-600 hover:text-red-900" onclick="return confirm('¿Borrar administrador?')">Eliminar</button>
-                                </form>
+                                <div class="flex gap-2">
+                                    <a href="{{ route('administradores.edit', $user) }}" class="bg-blue-500 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded transition duration-200 inline-flex items-center gap-2">
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/>
+                                        </svg>
+                                        Editar
+                                    </a>
+                                    <form action="{{ route('administradores.destroy', $user) }}" method="POST" class="inline">
+                                        @csrf @method('DELETE')
+                                        <button type="submit" class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded transition duration-200 inline-flex items-center gap-2" onclick="return confirm('¿Borrar administrador?')">
+                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/>
+                                            </svg>
+                                            Eliminar
+                                        </button>
+                                    </form>
+                                </div>
                             </td>
                         </tr>
                         @endforeach

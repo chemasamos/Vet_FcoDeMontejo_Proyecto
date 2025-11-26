@@ -1,0 +1,35 @@
+[33mcommit cc7245e5c99b5bc54009e85c2dc5b1739b0d9111[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: Jose Samos <chemasassss@gmail.com>
+Date:   Wed Nov 26 08:05:06 2025 -0600
+
+    Arreglo de bugs
+
+[33mcommit a355bb1c5cef21f7f7c979fc02afcb4f91710c6c[m
+Author: Jose Samos <chemasassss@gmail.com>
+Date:   Tue Nov 25 08:04:35 2025 -0600
+
+    Creacion y funcionalidades del dashboard
+
+[33mcommit 5317b838f152497abdb0bb7a3fed1a3315505c08[m
+Author: Jose Samos <chemasassss@gmail.com>
+Date:   Mon Nov 24 10:03:55 2025 -0600
+
+    Configuración de rutas protegidas y estructura del controlador
+
+[33mcommit 16a7117d4dbf47616e86f1b2ed96fd66749caf47[m
+Author: Jose Samos <chemasassss@gmail.com>
+Date:   Mon Nov 24 09:55:23 2025 -0600
+
+    Base de datos configurada y roles implementados
+
+[33mcommit 86c8883cb5b102592e7aa02dc6657f51b3919160[m
+Author: Jose Samos <chemasassss@gmail.com>
+Date:   Mon Nov 24 08:48:47 2025 -0600
+
+    Instalacion de cimientos del proyecto :P
+
+[33mcommit f434f025e03669ecbb72ca7e9107475c2df7d6b3[m
+Author: Jose Samos <chemasassss@gmail.com>
+Date:   Mon Nov 24 08:27:10 2025 -0600
+
+    Instalacion completat
