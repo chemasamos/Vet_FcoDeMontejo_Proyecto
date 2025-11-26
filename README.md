@@ -1,59 +1,246 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 🐾 Veterinaria Francisco de Montejo
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Sistema de gestión integral para clínica veterinaria, desarrollado con Laravel 11 y Tailwind CSS. Permite administrar clientes, mascotas y personal de manera eficiente con un sistema de roles y permisos robusto.
 
-## About Laravel
+## 📋 Características Principales
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- ✅ **Sistema de Autenticación**: Login/Logout con Laravel Jetstream
+- 👥 **Gestión de Roles**: Administrador, Staff y Cliente
+- 🐕 **Módulo de Mascotas**: CRUD completo con relación a dueños
+- 👤 **Gestión de Clientes**: Administración de usuarios tipo cliente
+- 🛡️ **Control de Acceso**: Rutas protegidas según roles
+- 🎨 **Interfaz Moderna**: UI responsive con Tailwind CSS
+- 📊 **Dashboard**: Vista general del sistema
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 🛠️ Tecnologías Utilizadas
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- **Backend**: Laravel 11.x
+- **Frontend**: Blade Templates + Tailwind CSS
+- **Autenticación**: Laravel Jetstream con Livewire
+- **Roles y Permisos**: Spatie Laravel-Permission
+- **Base de Datos**: MySQL/SQLite
+- **Assets**: Vite
 
-## Learning Laravel
+## ⚙️ Requisitos del Sistema
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+- PHP >= 8.2
+- Composer >= 2.5
+- Node.js >= 18.x
+- NPM >= 9.x
+- MySQL >= 8.0 o SQLite
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## 🚀 Instalación
 
-## Laravel Sponsors
+### 1️⃣ Clonar el Repositorio
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+```bash
+git clone <url-del-repositorio>
+cd Vet_FcoDeMontejo_Proyecto
+```
 
-### Premium Partners
+### 2️⃣ Instalar Dependencias de PHP
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+```bash
+composer install
+```
 
-## Contributing
+### 3️⃣ Instalar Dependencias de Node
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+```bash
+npm install
+```
 
-## Code of Conduct
+### 4️⃣ Configurar Variables de Entorno
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+```bash
+cp .env.example .env
+```
 
-## Security Vulnerabilities
+Edita el archivo `.env` y configura tu base de datos:
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+```env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=veterinaria_db
+DB_USERNAME=root
+DB_PASSWORD=
+```
 
-## License
+### 5️⃣ Generar Clave de Aplicación
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+```bash
+php artisan key:generate
+```
+
+### 6️⃣ Ejecutar Migraciones y Seeders
+
+```bash
+php artisan migrate --seed
+```
+
+Este comando creará todas las tablas necesarias y poblará la base de datos con datos de prueba.
+
+### 7️⃣ Compilar Assets
+
+```bash
+npm run build
+```
+
+Para desarrollo (con hot reload):
+
+```bash
+npm run dev
+```
+
+### 8️⃣ Iniciar el Servidor
+
+```bash
+php artisan serve
+```
+
+La aplicación estará disponible en: `http://localhost:8000`
+
+## 🔑 Credenciales de Prueba
+
+El seeder crea automáticamente los siguientes usuarios de prueba:
+
+### Administrador
+- **Email**: `admin@test.com`
+- **Contraseña**: `password`
+- **Permisos**: Acceso total al sistema
+
+### Staff
+- **Email**: `staff@test.com`
+- **Contraseña**: `password`
+- **Permisos**: Gestión de clientes y mascotas
+
+### Cliente
+- **Email**: `cliente@test.com`
+- **Contraseña**: `password`
+- **Permisos**: Vista de sus propias mascotas
+
+## 📱 Uso del Sistema
+
+### Panel de Administración
+
+1. **Gestión de Administradores**: `/administradores`
+   - Crear, editar y eliminar usuarios admin/staff
+   - Asignar roles a usuarios
+
+2. **Gestión de Clientes**: `/clientes`
+   - Administrar clientes del sistema
+   - Vincular clientes con mascotas
+
+3. **Gestión de Mascotas**: `/mascotas`
+   - Registrar nuevas mascotas
+   - Editar información (nombre, especie, raza, edad)
+   - Asociar mascota con dueño
+   - Eliminar registros
+
+### Dashboard
+
+Accede a `http://localhost:8000/dashboard` después de iniciar sesión para ver:
+- Resumen de estadísticas
+- Accesos rápidos a módulos principales
+- Panel personalizado según rol
+
+## 🗂️ Estructura del Proyecto
+
+```
+Vet_FcoDeMontejo_Proyecto/
+├── app/
+│   ├── Http/Controllers/
+│   │   ├── ClienteController.php
+│   │   ├── MascotaController.php
+│   │   └── UserController.php
+│   └── Models/
+│       ├── User.php
+│       └── Mascota.php
+├── database/
+│   ├── migrations/
+│   └── seeders/
+│       └── DatabaseSeeder.php
+├── resources/
+│   └── views/
+│       ├── clientes/
+│       ├── mascotas/
+│       ├── users/
+│       ├── dashboard.blade.php
+│       └── welcome.blade.php
+└── routes/
+    └── web.php
+```
+
+## 🔐 Sistema de Roles
+
+### Admin
+- Gestión completa de administradores y staff
+- Acceso a todos los módulos
+- Control total del sistema
+
+### Staff
+- Gestión de clientes
+- Gestión de mascotas
+- Sin acceso a panel de administradores
+
+### Cliente
+- Vista de sus propias mascotas
+- Acceso limitado al sistema
+
+## 🎨 Características de UI
+
+- ✨ Diseño responsive
+- 🌙 Soporte para modo oscuro
+- 🔵 Botones interactivos con efectos hover
+- 📊 Tablas con paginación
+- 🎯 Iconos SVG integrados
+- ⚡ Transiciones suaves
+
+## 📝 Comandos Útiles
+
+```bash
+# Limpiar caché
+php artisan cache:clear
+php artisan config:clear
+php artisan view:clear
+
+# Recompilar assets
+npm run build
+
+# Ejecutar en modo desarrollo
+npm run dev
+
+# Refrescar base de datos
+php artisan migrate:fresh --seed
+```
+
+## 🐛 Solución de Problemas
+
+### Error de permisos en storage/
+```bash
+chmod -R 775 storage bootstrap/cache
+```
+
+### Assets no se actualizan
+```bash
+npm run build
+```
+
+### Error con Vite
+```bash
+npm install
+npm run build
+```
+
+## 👨‍💻 Autor
+
+Proyecto desarrollado para la materia de Gaxiola el jeque arabe.
+
+## 📄 Licencia
+
+Este proyecto es de código abierto y está disponible bajo la [Licencia MIT](LICENSE).
+
+---
+
+**Nota**: Este es un proyecto académico desarrollado con fines educativos.
