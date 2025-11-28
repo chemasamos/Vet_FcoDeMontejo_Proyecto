@@ -19,7 +19,11 @@
                         <strong class="font-bold">¡Error!</strong>
                         <ul class="mt-2 list-disc list-inside">
                             @foreach ($errors->all() as $error)
-                                <li>{{ $error }}</li>
+                                <li>{{ str_replace(
+                                    ['The email has already been taken.', 'The password field is required.', 'The email field is required.', 'The name field is required.'],
+                                    ['El correo electrónico ya está registrado. Por favor usa uno diferente.', 'El campo contraseña es obligatorio.', 'El campo correo electrónico es obligatorio.', 'El campo nombre es obligatorio.'],
+                                    $error
+                                ) }}</li>
                             @endforeach
                         </ul>
                     </div>

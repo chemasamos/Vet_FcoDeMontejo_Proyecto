@@ -94,6 +94,11 @@ class UserController extends Controller
             return redirect()->route('administradores.index')->with('error', 'No puedes borrar tu propia cuenta.');
         }
 
+        // 3. Mensaje al intentar eliminar un usuario (Admin o Staff)
+        if ($user->hasRole(['admin', 'staff'])) {
+            return redirect()->route('administradores.index')->with('error', 'No puedes borrar este usuario porque es parte del personal administrativo.');
+        }
+
         $user->delete();
         return redirect()->route('administradores.index');
     }

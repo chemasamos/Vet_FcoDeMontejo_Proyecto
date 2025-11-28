@@ -13,6 +13,22 @@
                 <form action="{{ route('administradores.store') }}" method="POST">
                     @csrf
                     
+                    <!-- Validation Errors -->
+                    @if ($errors->any())
+                        <div class="mb-4 bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative">
+                            <strong class="font-bold">¡Error!</strong>
+                            <ul class="mt-2 list-disc list-inside">
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ str_replace(
+                                        ['The email has already been taken.', 'The password field is required.', 'The email field is required.', 'The name field is required.'],
+                                        ['El correo electrónico ya está registrado. Por favor usa uno diferente.', 'El campo contraseña es obligatorio.', 'El campo correo electrónico es obligatorio.', 'El campo nombre es obligatorio.'],
+                                        $error
+                                    ) }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+                    
                     <div class="mb-4">
                         <label class="block text-gray-700 dark:text-gray-300 font-bold mb-2">Nombre</label>
                         <input type="text" name="name" class="w-full rounded-md dark:bg-gray-900 dark:text-white border-gray-300" required>
