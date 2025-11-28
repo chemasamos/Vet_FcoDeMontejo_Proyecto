@@ -13,6 +13,11 @@ use Spatie\Permission\Traits\HasRoles; // Para los roles
 
 class User extends Authenticatable
 {
+    /**
+     * Modelo para la tabla 'users'.
+     * Representa a los usuarios del sistema (clientes, administradores, staff).
+     * Utiliza Spatie para manejo de roles y permisos.
+     */
     use HasApiTokens;
 
     /** @use HasFactory<\Database\Factories\UserFactory> */

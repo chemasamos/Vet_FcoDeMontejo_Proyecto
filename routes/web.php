@@ -6,6 +6,11 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\DashboardController;
 
+/**
+ * Definición de rutas web.
+ * Contiene todas las rutas de la aplicación, incluyendo autenticación y recursos protegidos.
+ */
+
 // Ruta pública (Bienvenida) - redirige a dashboard si está autenticado
 Route::get('/', function () {
     return auth()->check() ? redirect('/dashboard') : view('welcome');

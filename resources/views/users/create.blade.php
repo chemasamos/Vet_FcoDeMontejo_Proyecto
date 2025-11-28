@@ -1,3 +1,7 @@
+{{--
+    Vista de creación de administradores/staff.
+    Formulario para registrar un nuevo usuario con rol administrativo.
+--}}
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">Registrar Administrador</h2>

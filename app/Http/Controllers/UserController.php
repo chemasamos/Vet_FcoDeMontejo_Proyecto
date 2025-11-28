@@ -9,6 +9,10 @@ use Spatie\Permission\Models\Role;
 
 class UserController extends Controller
 {
+    /**
+     * Controlador para la gestión de usuarios administrativos.
+     * Maneja el CRUD para usuarios con roles de 'admin' y 'staff'.
+     */
     // Listar usuarios (solo administradores y staff)
     public function index()
     {

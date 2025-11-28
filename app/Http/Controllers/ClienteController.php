@@ -9,6 +9,10 @@ use Illuminate\Support\Facades\Hash;
 class ClienteController extends Controller
 {
     /**
+     * Controlador para la gestión de clientes.
+     * Maneja el CRUD completo para usuarios con el rol de 'client'.
+     */
+    /**
      * Display a listing of clients.
      */
     public function index()

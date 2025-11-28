@@ -8,6 +8,10 @@ use Illuminate\Http\Request;
 
 class MascotaController extends Controller
 {
+    /**
+     * Controlador para la gestión de mascotas.
+     * Maneja el CRUD completo de las mascotas y su asignación a clientes.
+     */
     // Listar Mascotas
     public function index()
     {

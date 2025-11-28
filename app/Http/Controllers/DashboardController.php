@@ -9,6 +9,10 @@ use Illuminate\Http\Request;
 class DashboardController extends Controller
 {
     /**
+     * Controlador para el panel principal (Dashboard).
+     * Muestra resúmenes y estadísticas de mascotas y clientes.
+     */
+    /**
      * Display the admin dashboard with summary data.
      */
     public function index()

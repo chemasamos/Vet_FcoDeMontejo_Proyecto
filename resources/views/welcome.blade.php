@@ -1,3 +1,7 @@
+{{--
+    Vista de bienvenida pública.
+    Página de aterrizaje para usuarios no autenticados.
+--}}
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>

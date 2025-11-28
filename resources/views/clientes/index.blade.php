@@ -1,3 +1,7 @@
+{{--
+    Vista de listado de clientes.
+    Muestra una tabla con todos los clientes registrados y opciones para editar o eliminar.
+--}}
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">

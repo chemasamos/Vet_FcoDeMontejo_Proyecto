@@ -7,6 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Mascota extends Model
 {
+    /**
+     * Modelo para la tabla 'mascotas'.
+     * Representa a las mascotas registradas en el sistema.
+     */
     use HasFactory;
 
     protected $fillable = [
